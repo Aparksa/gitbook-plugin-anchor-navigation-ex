@@ -66,4 +66,3 @@ This sets the following plugin functions, and rewrite.
 
 1. https://github.com/zhangzq/gitbook-plugin-navigator
 2. https://github.com/yaneryou/gitbook-plugin-anchor-navigation
-
