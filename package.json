@@ -1,14 +1,14 @@
 {
   "name": "gitbook-plugin-anchor-navigation-ex",
   "version": "1.0.10",
-  "description": "Supports two navigation mode, title, anchor effect is the default theme, style, follow the website",
+  "description": "Prend en charge deux modes de navigation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Erreur: pas de test spécifié\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex.git"
+    "url": "git+https://github.com/Aparksa/gitbook-plugin-anchor-navigation-ex.git"
   },
   "keywords": [
     "gitbook",
@@ -16,12 +16,12 @@
     "anchor-navigation-ex",
     "ex"
   ],
-  "author": "zhuqiang,yuan1994",
+  "author": "Aparksa",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/issues"
+    "url": "https://github.com/Aparksa/gitbook-plugin-anchor-navigation-ex.git/issues"
   },
-  "homepage": "https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex#readme",
+  "homepage": "hhttps://github.com/Aparksa/gitbook-plugin-anchor-navigation-ex.git#readme",
   "dependencies": {
     "cheerio": "*",
     "github-slugid": "1.0.1",
@@ -35,27 +35,27 @@
       "showLevel": {
         "type": "boolean",
         "default": true,
-        "title": "是否为标题增加锚点效果并显示序号"
+        "title": "Ajoute un effet d'ancrage au titre et affiche un numéro en série"
       },
       "associatedWithSummary": {
         "type": "boolean",
         "default": true,
-        "title": "是否与官方默认主题summary目录生成的序号相关联"
+        "title": "Est-il associé au numéro en série du sommaire ?"
       },
       "mode": {
         "type": "string",
         "default": "float",
-        "title": "导航模式"
+        "title": "Mode de navigation"
       },
       "printLog":{
         "type": "boolean",
         "default": false,
-        "title": "是否打印处理进度日志，方便排错"
+        "title": "Affiche le traitement dans le log de progression pour le dépannage"
       },
       "multipleH1":{
         "type": "boolean",
         "default": true,
-        "title": "false:去掉每页开头H1标题被重写成1. xxx（如果您的md文档遵循一个md文件只有一个H1标题的话)"
+        "title": "false: Suppression au début de chaque page. Le titre H1 est réécrit à 1. xxx (si votre fichier md suit un fichier md avec un seul titre H1)"
       },
       "float": {
         "type": "object",
@@ -65,7 +65,7 @@
           "level2Icon": "",
           "level3Icon": ""
         },
-        "title": "浮动右侧导航模式"
+        "title": "Mode de navigation menu flottant"
       },
       "pageTop": {
         "type": "object",
@@ -75,7 +75,7 @@
           "level2Icon": "",
           "level3Icon": ""
         },
-        "title": "页内顶部导航模式"
+        "title": "Mode de navigation menu en haut de page"
       }
     }
   }
