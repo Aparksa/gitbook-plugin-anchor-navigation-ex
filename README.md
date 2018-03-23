@@ -12,28 +12,28 @@
 
 -----
 
-:exclamation: 插件配置不兼容V1.x 以下版本
+:exclamation: Le plug-in n'est pas compatible avec V1.xV1.x
 
-# 插件功能
-- [x] 给页面H1-H6标题增加锚点效果
-- [x] 浮动导航模式
-- [x] 页面内顶部导航模式
-- [x] 导航标题前的层级图标是否显示，自定义H1-H3的层级图标
-- [x] plugins["theme-default"],页面标题层级与官方默认主题的`showLevel`层级关联
-- [x] plugins["theme-default"],插件样式支持官网默认主题的三种样式：White、Sepia、Night
-- [x] 在页面中增加`<extoc></extoc>`标签，会在此处生成TOC目录 
-- [x] 在页面中增加`<!-- ex_nonav -->`标签，不会在该页面生成悬浮导航
-- [x] config.printLog=true,打印当前的处理进度，排错很有用
-- [x] config.multipleH1=false,去掉丑陋的多余的1. 序号（如过您的书籍遵循一个MD文件只有一个H1标签的话）
+# Caractéristiques
+- [x] Ajouter un effet d'ancrage à la page (H1-H6)
+- [x] Mode de menu flottant
+- [x] Mode de menu en haut de la page
+- [x] Afficher l'icône de navigation devant le titre et affichage personnalisé de l'icône hiérarchique du H1-H3
+- [x] plugins["theme-default"],Hiérarchie des titres de page par défaut`showLevel`et association hiérarchique
+- [x] plugins["theme-default"],Prend en charge les styles du thème par défaut：White、Sepia、Night
+- [x] Ajouter en haut de la page`<extoc></extoc>` pour générer le TOC
+- [x] Ajouter`<!-- ex_nonav -->`pour ne pas ajouter de menu flottant
+- [x] config.printLog=true,Imprimer la progression du traitement en cours, pour le dépannage
+- [x] config.multipleH1=false
 
-# 插件效果
-* 风格：极简
-* [点击查看效果图](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/effectScreenshot.md)
+# Effet
+* style minimaliste
+* [Cliquez pour voir les rendus](https://github.com/Aparksa/gitbook-plugin-anchor-navigation-ex/blob/master/doc/effectScreenshot.md)
 
 
-# 怎么使用插件？
+# Comment l'utiliser？
 
-在你的 `book.json` 中增加插件：
+Dans votre `book.json` Ajouter le plugin：
 
 ```
 {
@@ -42,16 +42,16 @@
   ]
 }
 ```
-然后安装插件:
+Ensuite, installez le plugin:
 
 ```
 $ gitbook install ./
 ```
 
-就可以使用了，插件详细配置，[请点击这里查看](https://github.com/zq99299/gitbook-plugin-anchor-navigation-ex/blob/master/doc/config.md)
+et c'est prêt, configuration détaillée du plug-in，[cliquez ici pour voir](https://github.com/Aparksa/gitbook-plugin-anchor-navigation-ex/blob/master/doc/config.md)
 
 
-或则单独安装插件
+Ou installez le plug-in séparément
 
 ```
 $ npm install gitbook-plugin-anchor-navigation-ex --save
@@ -60,8 +60,8 @@ $ npm install gitbook-plugin-anchor-navigation-ex --save
 >open npm : https://www.npmjs.com/package/gitbook-plugin-anchor-navigation-ex
 
 
-# 致敬
-本插件集合以下插件的功能，并重写。
+# Remerciements
+Ce plug-in s'inspire des plug-ins suivants
 
 1. https://github.com/zhangzq/gitbook-plugin-navigator
 2. https://github.com/yaneryou/gitbook-plugin-anchor-navigation
