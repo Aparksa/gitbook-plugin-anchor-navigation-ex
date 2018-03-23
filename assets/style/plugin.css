@@ -1,4 +1,4 @@
-/** 浮动导航 */
+/** menu flottant*/
 #anchor-navigation-ex-navbar {
     background-color: #fafafa;
     border: 1px solid rgba(0, 0, 0, .07);
@@ -53,7 +53,7 @@
     padding-right: 4px;
 }
 
-/*对应官网皮肤主题颜色*/
+/*Couleur du thème correspondant au site officiel*/
 .book.color-theme-1 #anchor-navigation-ex-navbar {
     background-color: #111111;
     border-color: #7e888b;
@@ -74,7 +74,7 @@
     color: #c1c6d7;
 }
 
-/* 返回顶部 */
+/* Retour en haut */
 #anchorNavigationExGoTop {
     position: fixed;
     right: 50px;
@@ -91,7 +91,7 @@
     padding: 5px 10px;
     color: #364149;
 }
-/*对应官网皮肤主题颜色*/
+/*Couleur du thème correspondant au site officiel*/
 .book.color-theme-1 #anchorNavigationExGoTop {
     background-color: #111111;
     border-color: #7e888b;
@@ -136,7 +136,7 @@ h4:hover a.anchor-navigation-ex-anchor, h5:hover a.anchor-navigation-ex-anchor, 
     overflow: visible;
 }
 
-/* 页面内顶部固定导航  */
+/*menu en haut de la page  */
 #anchor-navigation-ex-pagetop-navbar{
     border: 1px solid rgba(0, 0, 0, .07);
     border-radius: 1px;
@@ -177,7 +177,7 @@ h4:hover a.anchor-navigation-ex-anchor, h5:hover a.anchor-navigation-ex-anchor, 
     padding-right: 4px;
 }
 
-/*对应官网皮肤主题颜色*/
+/*Couleur du thème correspondant au site officiel*/
 .book.color-theme-1 #anchor-navigation-ex-pagetop-navbar {
     background-color: #111111;
     border-color: #7e888b;
