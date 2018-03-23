@@ -12,7 +12,7 @@ module.exports = {
         },
         "page": function (page) {
             if (Config.config.printLog) {
-                console.info("INFO:".info + "当前正在处理:" + page.path)
+                console.info("INFO:".info + "Traitement en cours:" + page.path)
             }
             var bookIns = this;
             _start(bookIns, page);
