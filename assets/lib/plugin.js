@@ -4,11 +4,11 @@ var Config = require('./config.js');
 
 
 /**
- * 处理toc相关，同时处理标题和id
+ * Traitement du toc relatif, traitement des titres et id
  * @param $
  * @param option
  * @param page
- * @returns {Array} 返回处理好的tocs合集
+ * @returns {Array} Renvoi les tocs traités
  */
 function handlerTocs($, page) {
     var config = Config.config;
@@ -18,7 +18,7 @@ function handlerTocs($, page) {
         h2: 0,
         h3: 0
     };
-    var titleCountMap = {}; // 用来记录标题出现的次数
+    var titleCountMap = {}; // enregistre le nombre de fois que le titre apparaît
     var h1 = 0, h2 = 0, h3 = 0;
     $(':header').each(function (i, elem) {
         var header = $(elem);
@@ -41,15 +41,15 @@ function handlerTocs($, page) {
             }
         }
     });
-    // 不然标题重写就没有效果，如果在外面不调用这句话的话
+    // La réécriture du titre n'a aucun effet, si vous n'appelez pas cette phrase à l'extérieur
     page.content = $.html();
     return tocs;
 }
 
 /**
- * 处理锚点
+ * gestion des ancres
  * @param header
- * @param titleCountMap 用来记录标题出现的次数
+ * @param titleCountMap - enregistre le nombre de fois que le titre apparaît
  * @returns {string}
  */
 function addId(header, titleCountMap) {
@@ -57,7 +57,7 @@ function addId(header, titleCountMap) {
     var titleCount = titleCountMap[id] || 0;
     titleCountMap[id] = titleCount + 1;
     // console.log('id:', id, 'n:', titleCount, 'hashmap:', titleCountMap)
-    if (titleCount) {//此标题已经存在  null/undefined/0/NaN/ 表达式时，统统被解释为false
+    if (titleCount) {//Ce titre existe déjà - null/undefined/0/NaN/ Lorsque les expressions sont toutes interprétées comme:false
         id = id + '_' + titleCount;
     }
     header.attr("id", id);
@@ -65,7 +65,7 @@ function addId(header, titleCountMap) {
 }
 
 /**
- * 标题增加锚点效果
+ * LIndentation des ancres
  * @param header
  * @param id
  */
@@ -77,18 +77,18 @@ function titleAddAnchor(header, id) {
 }
 
 /**
- * 处理h1
- * @param count 计数器
+ * Ancre h1
+ * @param count - decompte
  * @param header
- * @param tocs 根节点
+ * @param tocs 
  */
 function handlerH1Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
-    var level = ''; //层级
+    var level = ''; //Hiérarchie
 
     if (config.showLevel) {
-        //层级显示仅在需要的时候处理 
+        //L'affichage hiérarchique est uniquement traité si besoin 
         count.h1 += 1;
         count.h2 = 0;
         count.h3 = 0;
@@ -97,11 +97,11 @@ function handlerH1Toc(config, count, header, tocs, pageLevel) {
         }else{
             level = ' ';
         }
-        // 是否与官网默认主题层级序号相关联
+        // Indique s'il est associé au numéro par défaut du summary.md
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + '.' + level;
         }
-        header.text(level + title); //重写标题
+        header.text(level + title); //Réécriture de l'en-tête
     }
     titleAddAnchor(header, id);
     tocs.push({
@@ -112,14 +112,14 @@ function handlerH1Toc(config, count, header, tocs, pageLevel) {
     });
 }
 /**
- * 处理h2
- * @param count 计数器
+ * ancre h2
+ * @param count - décompte
  * @param header
  */
 function handlerH2Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
-    var level = ''; //层级
+    var level = ''; //Hiérarchie
 
     if (tocs.length <= 0) {
         titleAddAnchor(header, id);
@@ -139,7 +139,7 @@ function handlerH2Toc(config, count, header, tocs, pageLevel) {
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + '.' + level;
         }
-        header.text(level + title); //重写标题
+        header.text(level + title); //Réécriture de l'en-tête
     }
     titleAddAnchor(header, id);
     h1Toc.children.push({
@@ -150,14 +150,14 @@ function handlerH2Toc(config, count, header, tocs, pageLevel) {
     });
 }
 /**
- * 处理h3
- * @param count 计数器
+ * ancre h3
+ * @param count - décompte
  * @param header
  */
 function handlerH3Toc(config, count, header, tocs, pageLevel) {
     var title = header.text();
     var id = header.attr('id');
-    var level = ''; //层级
+    var level = ''; //Hiérarchie
 
     if (tocs.length <= 0) {
         titleAddAnchor(header, id);
@@ -182,7 +182,7 @@ function handlerH3Toc(config, count, header, tocs, pageLevel) {
         if (config.associatedWithSummary && config.themeDefault.showLevel) {
             level = pageLevel + "." + level;
         }
-        header.text(level + title); //重写标题
+        header.text(level + title); //Réécriture de l'en-tête
     }
     titleAddAnchor(header, id);
     h2Toc.children.push({
@@ -194,7 +194,7 @@ function handlerH3Toc(config, count, header, tocs, pageLevel) {
 }
 
 /**
- * 处理浮动导航：拼接锚点导航html，并添加到html末尾，利用css 悬浮
+ * menu flottant
  * @param option
  * @param tocs
  * @param page
@@ -285,10 +285,8 @@ function buildTopNavbar($, tocs, page) {
 
 function start(bookIns, page) {
     var $ = cheerio.load(page.content);
-    // 处理toc相关，同时处理标题和id
     var tocs = handlerTocs($, page);
 
-    // 设置处理之后的内容
     if (tocs.length == 0) {
         page.content = $.html();
         return;
